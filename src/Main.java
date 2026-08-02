@@ -35,18 +35,25 @@ public class Main {
         System.out.println("Task 3.1");
         int budget = 975;
         int pay = 100;
-        int parkingDays = 0;
-        while ( budget >= pay ){
-            parkingDays++;
-            if( parkingDays % 5 ==0){
+        int parkingDays = 1;
+        while (budget >= pay) {
+
+            if (parkingDays % 5 == 0) {
+                System.out.println(parkingDays + "-й день парковки. Остаток средств - " + budget);
                 System.out.println("Беспалатный день парковки");
+                parkingDays++;
                 continue;
-            }else{
-                budget = budget - pay;
             }
+            budget = budget - pay;
             System.out.println(parkingDays + "-й день парковки. Остаток средств - " + budget);
+
+            if (budget - pay < 0) {
+                break;
+            }
+            parkingDays++;
         }
         System.out.println("Бюджета хватит на " + parkingDays + " дней стоянки на парковке");
+
 
         System.out.println("Task 3.2");
         int budget2 = 1050;
